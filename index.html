@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitZone - Your Fitness Journey Starts Here</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="logo">FitZone</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#trainers">Trainers</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li id="navAuthBtn">
+          <a href="#" onclick="showAuthSystem('login')" class="nav-btn nav-login">Login / Register</a>
+        </li>
+        <li id="navUserMenu" class="hidden">
+          <a href="#" onclick="showUserMenu()" class="nav-btn nav-user">
+            <span id="navUserName">User</span> ▼
+          </a>
+          <div id="userDropdown" class="user-dropdown hidden">
+            <a href="#" onclick="showDashboard()">Dashboard</a>
+            <a href="#" onclick="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+      <div class="mobile-menu">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Body</h1>
+      <p>Join FitZone and start your fitness journey today</p>
+      <div class="cta-buttons">
+        <a href="#" onclick="showAuthSystem('register')" class="btn btn-primary">Start Your Journey</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2 class="section-title">About FitZone</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Your Fitness Partner</h3>
+        <p>At FitZone, we believe fitness is not just about physical transformation—it's about building confidence, strength, and a healthier lifestyle. Our state-of-the-art facility and expert trainers are here to guide you every step of the way.</p>
+        <p>Whether you're a beginner or an experienced athlete, we have the programs and equipment to help you reach your goals. Join our community and discover what you're truly capable of achieving.</p>
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+      </div>
+      <!-- <div class="about-image">
+        <p>State-of-the-art Gym Facility</p>
+      </div> -->
+      <div class="about-slider" id="aboutSlider">
+  <img src="images/gym-1.jpg" alt="Gym photo 1" class="slide active">
+  <img src="images/gym-2.jpg" alt="Gym photo 2" class="slide">
+  <img src="images/gym-3.jpg" alt="Gym photo 3" class="slide">
+
+  <button class="slider-btn prev" aria-label="Previous">‹</button>
+  <button class="slider-btn next" aria-label="Next">›</button>
+  <div class="slider-dots"></div>
+</div>
+
+    </div>
+  </section>
+
+  <section id="services" class="services fade-in">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Comprehensive fitness solutions tailored to your needs</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💪</div>
+        <h3>Strength Training</h3>
+        <p>Build muscle and increase your strength with our professional-grade equipment and expert guidance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏃</div>
+        <h3>Cardio Fitness</h3>
+        <p>Improve your cardiovascular health with our variety of cardio equipment and high-energy classes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧘</div>
+        <h3>Yoga & Pilates</h3>
+        <p>Find balance and flexibility through our calming yoga and pilates sessions led by certified instructors.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Group Classes</h3>
+        <p>Stay motivated with our fun and energetic group fitness classes suitable for all fitness levels.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Personal Training</h3>
+        <p>Get personalized attention and customized workout plans with our certified personal trainers.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥗</div>
+        <h3>Nutrition Coaching</h3>
+        <p>Achieve your goals faster with professional nutrition guidance and meal planning support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trainers" class="fade-in">
+    <h2 class="section-title">Meet Our Trainers</h2>
+    <p class="section-subtitle">Certified professionals dedicated to your success</p>
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <img src="images/sarah-johnson.jpg" alt="Sarah Johnson" class="trainer-image">
+        <div class="trainer-info">
+          <h3>Sarah Johnson</h3>
+          <p>Certified Personal Trainer & Nutrition Specialist</p>
+        </div>
+      </div>
+      <div class="trainer-card">
+         <img src="images/mike-rodriguez.jpg" alt="Mike Rodriguez" class="trainer-image">
+        <div class="trainer-info">
+          <h3>Mike Rodriguez</h3>
+          <p>Strength Training & CrossFit Coach</p>
+        </div>
+      </div>
+      <div class="trainer-card">
+       <img src="images/emily-chen.jpg" alt="Emily Chen" class="trainer-image">
+        <div class="trainer-info">
+          <h3>Emily Chen</h3>
+          <p>Yoga Instructor & Wellness Coach</p>
+        </div>
+      </div>
+      <div class="trainer-card">
+       <img src="images/david-kim.jpg" alt="David Kim">
+        <div class="trainer-info">
+             <!-- <img src="images/david-kim.jpg" alt="David Kim"> -->
+          <h3>David Kim</h3>
+          <p>Sports Performance & Rehabilitation Specialist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing fade-in">
+    <h2 class="section-title">Membership Plans</h2>
+    <p class="section-subtitle">Choose the plan that fits your lifestyle</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">₹499<span>/month</span></div>
+        <ul class="features">
+          <li>Access to gym equipment</li>
+          <li>Locker room access</li>
+          <li>Basic fitness assessment</li>
+          <li>Online workout tracking</li>
+        </ul>
+        <a href="#" onclick="showAuthSystem('register')" class="btn btn-primary">Choose Plan</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Premium</h3>
+        <div class="price">₹999<span>/month</span></div>
+        <ul class="features">
+          <li>All Basic features</li>
+          <li>Unlimited group classes</li>
+          <li>Personal training session (monthly)</li>
+          <li>Nutrition consultation</li>
+          <li>Priority booking</li>
+        </ul>
+        <a href="#" onclick="showAuthSystem('register')" class="btn btn-primary">Choose Plan</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Elite</h3>
+        <div class="price">₹2799<span>/month</span></div>
+        <ul class="features">
+          <li>All Premium features</li>
+          <li>Unlimited personal training</li>
+          <li>Custom meal plans</li>
+          <li>Recovery services</li>
+          <li>Guest passes (5/month)</li>
+        </ul>
+        <a href="#" onclick="showAuthSystem('register')" class="btn btn-primary">Choose Plan</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="member-portal" class="member-portal fade-in">
+    <h2 class="section-title">Member Portal</h2>
+    <p class="section-subtitle">Manage your fitness journey online</p>
+    <div class="portal-features">
+      <div class="feature-item">
+        <h4>Book Classes</h4>
+        <p>Reserve your spot in group fitness classes</p>
+      </div>
+      <div class="feature-item">
+        <h4>Track Progress</h4>
+        <p>Monitor your workouts and achievements</p>
+      </div>
+      <div class="feature-item">
+        <h4>Schedule Training</h4>
+        <p>Book personal training sessions</p>
+      </div>
+      <div class="feature-item">
+        <h4>Payment History</h4>
+        <p>View billing and payment information</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <button class="btn btn-primary" onclick="showAuthSystem()">Member Login</button>
+      <button class="btn btn-outline" onclick="showAuthSystem('register')" style="margin-left:1rem;">Join Now</button>
+    </div>
+  </section>
+
+  <section id="schedule" class="fade-in">
+    <h2 class="section-title">Class Schedule</h2>
+    <p class="section-subtitle">Join our energizing group fitness classes</p>
+    <div class="schedule-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th>
+            <th>Thursday</th><th>Friday</th><th>Saturday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>6:00 AM</strong></td><td>Morning Yoga</td><td>CrossFit</td><td>Morning Yoga</td><td>CrossFit</td><td>Morning Yoga</td><td>HIIT Training</td></tr>
+          <tr><td><strong>8:00 AM</strong></td><td>Strength Training</td><td>Pilates</td><td>Strength Training</td><td>Pilates</td><td>Strength Training</td><td>Yoga Flow</td></tr>
+          <tr><td><strong>12:00 PM</strong></td><td>Lunch HIIT</td><td>Yoga</td><td>Lunch HIIT</td><td>Yoga</td><td>Lunch HIIT</td><td>-</td></tr>
+          <tr><td><strong>6:00 PM</strong></td><td>Zumba</td><td>Boxing</td><td>Zumba</td><td>Boxing</td><td>Zumba</td><td>Weekend Warrior</td></tr>
+          <tr><td><strong>7:30 PM</strong></td><td>Evening Yoga</td><td>Strength Circuit</td><td>Evening Yoga</td><td>Strength Circuit</td><td>Evening Yoga</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-content">
+      <div class="contact-form">
+        <h3>Send us a Message</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label><input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label><input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label><input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h3>Visit Our Gym</h3>
+        <p><strong>Address:</strong><br>123 Fitness Street<br>Healthy City, HC 12345</p>
+        <p><strong>Phone:</strong><br>(555) 123-4567</p>
+        <p><strong>Email:</strong><br>info@fitzone.com</p>
+        <p><strong>Hours:</strong><br>Mon-Fri: 5:00 AM - 11:00 PM<br>Sat-Sun: 6:00 AM - 10:00 PM</p>
+        <div style="margin-top:2rem;">
+          <h3>Follow Us</h3>
+          <p>Stay connected for tips, updates, and motivation!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FitZone. All rights reserved. | Designed for your fitness success</p>
+  </footer>
+
+  <!-- Authentication Overlay -->
+  <div id="authOverlay" class="auth-overlay">
+    <div class="auth-container">
+      <button class="auth-close" onclick="hideAuthSystem()">×</button>
+
+      <div class="auth-sidebar">
+        <div class="auth-logo">FitZone</div>
+        <div class="auth-tagline">Professional Gym Management</div>
+        <!-- Optional Home button
+        <a href="#home" class="auth-home-btn" onclick="hideAuthSystem()">🏠 Home</a>
+        -->
+        <div class="auth-nav-menu">
+          <div class="auth-nav-item"><span class="auth-nav-icon">👥</span><span>Member Management</span></div>
+          <div class="auth-nav-item"><span class="auth-nav-icon">📊</span><span>Workout Tracking</span></div>
+          <div class="auth-nav-item"><span class="auth-nav-icon">💳</span><span>Payment Processing</span></div>
+          <div class="auth-nav-item"><span class="auth-nav-icon">📅</span><span>Class Scheduling</span></div>
+          <div class="auth-nav-item"><span class="auth-nav-icon">🏋️</span><span>Equipment Monitoring</span></div>
+          <div class="auth-nav-item"><span class="auth-nav-icon">📈</span><span>Progress Reports</span></div>
+        </div>
+      </div>
+
+      <div class="auth-main-content">
+        <!-- Login -->
+        <div id="authLoginForm" class="auth-form-container">
+          <div class="auth-form-header">
+            <h1 class="auth-form-title">Welcome Back</h1>
+            <p class="auth-form-subtitle">Sign in to your account</p>
+          </div>
+          <form id="authLoginFormElement">
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authLoginEmail">Email</label>
+              <input type="email" id="authLoginEmail" class="auth-form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authLoginPassword">Password</label>
+              <input type="password" id="authLoginPassword" class="auth-form-input" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="auth-submit-btn">SIGN IN</button>
+          </form>
+          <div class="auth-form-footer">
+            <p>New user?
+              <a href="#" class="auth-form-link" onclick="showAuthRegisterForm()">Register here</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Register -->
+        <div id="authRegisterForm" class="auth-form-container hidden">
+          <div class="auth-form-header">
+            <h1 class="auth-form-title">Join FitZone</h1>
+            <p class="auth-form-subtitle">Create your account today</p>
+          </div>
+          <form id="authRegisterFormElement">
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authFullName">Full Name</label>
+              <input type="text" id="authFullName" class="auth-form-input" placeholder="Enter your full name" required>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authRegisterEmail">Email</label>
+              <input type="email" id="authRegisterEmail" class="auth-form-input" placeholder="Enter your email" required>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authRegisterPassword">Password</label>
+              <input type="password" id="authRegisterPassword" class="auth-form-input" placeholder="Create a password" required>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authPhoneNumber">Phone Number</label>
+              <input type="tel" id="authPhoneNumber" class="auth-form-input" placeholder="Enter your phone number" required>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authUserRole">User Role</label>
+              <select id="authUserRole" class="auth-form-select" required>
+                <option value="">Select Role</option>
+                <option value="member">Member</option>
+                <option value="trainer">Trainer</option>
+                <option value="admin">Admin</option>
+                <option value="staff">Staff</option>
+              </select>
+            </div>
+            <div class="auth-form-group">
+              <label class="auth-form-label" for="authMembershipType">Membership Type</label>
+              <select id="authMembershipType" class="auth-form-select" required>
+                <option value="">Select Membership</option>
+                <option value="basic">Basic - ₹499/month</option>
+                <option value="premium">Premium - ₹999/month</option>
+                <option value="elite">Elite - ₹2799/month</option>
+                <option value="corporate">Corporate</option>
+              </select>
+            </div>
+            <button type="submit" class="auth-submit-btn">CREATE ACCOUNT</button>
+          </form>
+          <div class="auth-form-footer">
+            <p>Already have an account?
+              <a href="#" class="auth-form-link" onclick="showAuthLoginForm()">Sign In</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- App JS (module so Firebase imports work) -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
